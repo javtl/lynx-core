@@ -111,7 +111,9 @@ Then:
 
 ## 📖 Architecture 
 
-LYNX follows **Hexagonal Architecture** (Ports & Adapters). The domain is **pure Java**, zero framework dependencies.
+
+
+LYNX follows Hexagonal Architecture. The domain layer is pure Java (zero Spring annotations). The infrastructure layer uses Spring Boot (HTTP, MongoDB, config)—but it's swappable. Need Quarkus instead? Only infrastructure changes.
 
 ```
 domain/                    ← Pure business logic
