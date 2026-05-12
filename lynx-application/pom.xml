@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ================================================================== -->
+    <!-- MÓDULO: lynx-application                                            -->
+    <!-- Orquesta los Casos de Uso. Depende del Dominio pero NO de Spring.  -->
+    <!-- Contiene: Use Cases, Puertos de entrada/salida (Interfaces),       -->
+    <!--           DTOs (Request/Response), Mappers de Aplicación.          -->
+    <!-- Regla: Puede usar anotaciones de validación Jakarta, pero          -->
+    <!--         NINGUNA anotación de Spring (@Service, @Component...).     -->
+    <!-- ================================================================== -->
+    <parent>
+        <groupId>com.nominal.lynx</groupId>
+        <artifactId>lynx-core</artifactId>
+        <version>0.1.0-alpha</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>lynx-application</artifactId>
+    <packaging>jar</packaging>
+    <name>LYNX Application — Use Cases &amp; Ports</name>
+
+    <dependencies>
+
+        <!-- ============================================================== -->
+        <!-- DEPENDENCIA INTERNA: El Dominio                                 -->
+        <!-- Application orquesta el Dominio, nunca al revés.              -->
+        <!-- ============================================================== -->
+        <dependency>
+            <groupId>com.nominal.lynx</groupId>
+            <artifactId>lynx-domain</artifactId>
+            <!-- version heredada del dependencyManagement del root pom    -->
+        </dependency>
+
+        <!-- ============================================================== -->
+        <!-- Jakarta Validation API                                          -->
+        <!-- Para anotar los campos de los DTOs (@NotNull, @NotBlank...).   -->
+        <!-- Solo la API (interfaz), sin implementación (Hibernate Val.     -->
+        <!-- se añadirá en infrastructure donde Spring Boot la provee).    -->
+        <!-- ============================================================== -->
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <!-- version heredada del dependencyManagement del root pom    -->
+        </dependency>
+
+        <!-- ============================================================== -->
+        <!-- Testing                                                         -->
+        <!-- ============================================================== -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/lynx_core_dev
+
+logging:
+  level:
+    com.nominal.lynx: DEBUG

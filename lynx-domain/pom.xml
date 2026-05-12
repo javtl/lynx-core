@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ================================================================== -->
+    <!-- MÓDULO: lynx-domain                                                 -->
+    <!-- RESTRICCIÓN ABSOLUTA: Cero dependencias de Spring.                 -->
+    <!-- El Dominio es puro Java; no conoce frameworks ni bases de datos.   -->
+    <!-- Contiene: Entidades, Value Objects, Interfaces de Repositorio,     -->
+    <!--           Domain Services, Domain Exceptions.                      -->
+    <!-- ================================================================== -->
+    <parent>
+        <groupId>com.nominal.lynx</groupId>
+        <artifactId>lynx-core</artifactId>
+        <version>0.1.0-alpha</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>lynx-domain</artifactId>
+    <packaging>jar</packaging>
+    <name>LYNX Domain — Pure Business Core</name>
+
+    <dependencies>
+
+        <!-- ============================================================== -->
+        <!-- ÚNICO FRAMEWORK PERMITIDO: Testing                              -->
+        <!-- JUnit 5 y Mockito solo en scope test. La lógica de dominio     -->
+        <!-- debe poder testearse sin levantar ningún contenedor.           -->
+        <!-- ============================================================== -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <!-- version heredada del root pom, scope=test ya definido -->
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <!-- version heredada del root pom, scope=test ya definido -->
+        </dependency>
+
+        <!-- ============================================================== -->
+        <!-- NOTA sobre Lombok y Java Records:                               -->
+        <!-- Dado que usamos Java 17 Records (ver BatchRecord.java),        -->
+        <!-- Lombok NO es necesario para el dominio.                        -->
+        <!-- Si en el futuro alguna clase de dominio lo requiriese:         -->
+        <!--                                                                 -->
+        <!--   <dependency>                                                  -->
+        <!--     <groupId>org.projectlombok</groupId>                        -->
+        <!--     <artifactId>lombok</artifactId>                             -->
+        <!--     <scope>provided</scope>  ← compile-only equivalent          -->
+        <!--   </dependency>                                                 -->
+        <!--                                                                 -->
+        <!-- 'provided': disponible en compilación, no en el JAR final.    -->
+        <!-- ============================================================== -->
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- Configuración heredada del pluginManagement del root  -->
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
