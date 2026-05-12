@@ -9,7 +9,7 @@
 
 ## The Immutable Supply Chain Protocol
 
-> **Hexagonal architecture meets append-only ledger.** A production-grade backend for industrial traceability that works with or without blockchain. Built from first principles—no shortcuts.
+> **Hexagonal architecture meets append-only ledger.** A production-grade backend for industrial traceability that works immutable. Built from first principles no shortcuts.
 
 ---
 
@@ -29,7 +29,7 @@ When a food distributor needs FDA compliance proof, they dig through years of sc
 
 **LYNX Core is a protocol for immutable traceability.**
 
-Instead of "update the batch record," LYNX records **every change as an event**—permanently. The ledger grows; it never mutates. This creates an unbreakable audit trail.
+Instead of "update the batch record," LYNX records **every change as an event** permanently. The ledger grows; it never mutates. This creates an unbreakable audit trail.
 
 ```
 Your API calls → Domain validates → Event recorded → Immutable ledger
@@ -81,6 +81,8 @@ Your API calls → Domain validates → Event recorded → Immutable ledger
 - [ ] State machine enforcement (DRAFT → ACTIVE → DISPATCHED)
 - [ ] JWT authentication + RBAC
 - [ ] Claude AI ingestion (text → batch)
+    
+- [ ] Next Sptints in coming...
 
 ---
 
@@ -91,6 +93,8 @@ Your API calls → Domain validates → Event recorded → Immutable ledger
 - Docker + Docker Compose
 
 ### One Command
+
+> [!WARNING] in MVP development process phase 
 
 ```bash
 git clone https://github.com/nominal-studio/lynx-core.git
@@ -168,52 +172,14 @@ Invalid transitions throw `InvalidStateTransitionException` at the domain level,
 
 ```bash
 mvn test
-# 29 tests, all integration
+# all tests, all integration
 # Testcontainers spins up real MongoDB for each test
 # Tests are green or they're red—no "happy path"
 ```
 
 ---
 
-## 🔮 Roadmap (Why You Should Pay Attention)
-
-### Phase 1: Core (May 2026) ✅
-Immutable traceability engine. Domain-first architecture.
-
-### Phase 2: Integration (Summer 2026)
-AI ingestion (Claude), React dashboard, mobile app (Kotlin Multiplatform).
-
-### Phase 3: Decentralization (2027)
-Blockchain audit layer, token governance, DAO.
 
 **The Vision:** LYNX becomes the open-source standard for industrial traceability. 
----
-
-## 💻 Development
-
-### Build
-
-```bash
-mvn clean install
-```
-
-### Run Locally
-
-```bash
-mvn spring-boot:run
-```
-
-### Tests
-
-```bash
-mvn test
-```
-
-### Docker Build
-
-```bash
-docker build -t lynx-core:latest .
-docker-compose up
-```
 
 ---
