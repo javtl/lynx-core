@@ -1,0 +1,40 @@
+# --- Java & Build Tools ---
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+
+# --- LYNX Core (Específicos y Seguridad) ---
+.env
+*.log
+bin/
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iws
+*.iml
+*.ipr
+# Avoid committing IDE build output only at repository root.
+/out/
+
+# --- VS Code ---
+.vscode/
+
+# --- Eclipse / STS ---
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# --- Operating System ---
+.DS_Store
+Thumbs.db
+
+# --- Local runtime configuration ---
+**/application-local.yml
