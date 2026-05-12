@@ -137,7 +137,7 @@ infrastructure/            ← Implementation details
 ### Batch (Immutable Record)
 
 ```java
-Batch batch = Batch.createDraft("SALICORNIA-001", 25.5, "kg");
+Batch batch = Batch.createDraft("PRODUCT-001", 5.5, "kg");
 batch = batch.withStatus(BatchStatus.ACTIVE);  // Returns NEW instance
 ```
 
