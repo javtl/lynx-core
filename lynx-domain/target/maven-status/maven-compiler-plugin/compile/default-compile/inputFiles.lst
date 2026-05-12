@@ -1,0 +1,4 @@
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/exception/InconsistentStateTransitionException.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/model/BatchRecord.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/port/in/CreateBatchUseCase.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/port/out/BatchRepository.java

@@ -1,0 +1,3 @@
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/test/java/com/nominal/lynx/LynxCoreApplicationTests.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/test/java/com/nominal/lynx/infrastructure/config/UseCaseBeansTest.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/test/java/com/nominal/lynx/infrastructure/output/persistence/BatchMongoAdapterTest.java

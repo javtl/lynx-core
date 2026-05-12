@@ -1,0 +1,6 @@
+com/nominal/lynx/domain/exception/InconsistentStateTransitionException.class
+com/nominal/lynx/domain/model/BatchRecord$1.class
+com/nominal/lynx/domain/port/in/CreateBatchUseCase.class
+com/nominal/lynx/domain/port/out/BatchRepository.class
+com/nominal/lynx/domain/model/BatchRecord$BatchStatus.class
+com/nominal/lynx/domain/model/BatchRecord.class
