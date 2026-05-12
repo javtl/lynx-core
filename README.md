@@ -1,5 +1,12 @@
 # 🐾 LYNX Core
 
+
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Latest-47A248)
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939)
+
 ## The Immutable Supply Chain Protocol
 
 > **Hexagonal architecture meets append-only ledger.** A production-grade backend for industrial traceability that works with or without blockchain. Built from first principles—no shortcuts.
