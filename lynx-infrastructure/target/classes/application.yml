@@ -4,6 +4,8 @@ server:
     context-path: /
 
 spring:
+  profiles:
+    include: local
   application:
     name: lynx-core
   data:

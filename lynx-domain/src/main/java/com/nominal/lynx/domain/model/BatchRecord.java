@@ -74,6 +74,10 @@ public record BatchRecord(
         return new BatchRecord(id, sku, quantity, unit, metadata, nextStatus, createdBy, createdAt);
     }
 
+    public UUID createdByUserId() {
+        return null;
+    };
+
     /**
      * Domain lifecycle for a batch.
      */
