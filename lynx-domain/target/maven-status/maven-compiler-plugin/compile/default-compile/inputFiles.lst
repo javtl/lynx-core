@@ -1,4 +1,9 @@
 /home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/exception/InconsistentStateTransitionException.java
 /home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/model/BatchRecord.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/model/EventSource.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/model/LedgerAction.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/model/LedgerEvent.java
 /home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/port/in/CreateBatchUseCase.java
 /home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/port/out/BatchRepository.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/port/out/BatchRepositoryPort.java
+/home/javier/Documents/local-projects/lynx-core/lynx-domain/src/main/java/com/nominal/lynx/domain/port/out/LedgerRepositoryPort.java

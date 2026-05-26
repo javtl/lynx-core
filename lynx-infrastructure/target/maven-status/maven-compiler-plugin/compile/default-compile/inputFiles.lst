@@ -1,7 +1,15 @@
-/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/LynxCoreApplication.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/LynxApplication.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/config/MongoDBConfig.java
 /home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/config/SecurityConfig.java
 /home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/config/UseCaseBeans.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/input/rest/BatchController.java
 /home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/input/rest/package-info.java
 /home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/ai/package-info.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/persistence/BatchDocument.java
 /home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/persistence/BatchMongoAdapter.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/persistence/BatchMongoRepository.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/persistence/LedgerEventDocument.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/persistence/LedgerEventMongoRepository.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/persistence/MongoBatchAdapter.java
+/home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/persistence/MongoLedgerAdapter.java
 /home/javier/Documents/local-projects/lynx-core/lynx-infrastructure/src/main/java/com/nominal/lynx/infrastructure/output/security/package-info.java

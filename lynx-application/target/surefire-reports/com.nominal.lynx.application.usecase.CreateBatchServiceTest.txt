@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.nominal.lynx.application.usecase.CreateBatchServiceTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.426 s -- in com.nominal.lynx.application.usecase.CreateBatchServiceTest

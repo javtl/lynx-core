@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.nominal.lynx.domain.test.BatchRecordTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.748 s -- in com.nominal.lynx.domain.test.BatchRecordTest
