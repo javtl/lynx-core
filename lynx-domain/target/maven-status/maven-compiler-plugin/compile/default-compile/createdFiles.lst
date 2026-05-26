@@ -1,6 +1,11 @@
 com/nominal/lynx/domain/exception/InconsistentStateTransitionException.class
+com/nominal/lynx/domain/model/LedgerEvent.class
+com/nominal/lynx/domain/port/out/BatchRepository.class
+com/nominal/lynx/domain/port/out/BatchRepositoryPort.class
+com/nominal/lynx/domain/model/BatchRecord.class
+com/nominal/lynx/domain/port/out/LedgerRepositoryPort.class
+com/nominal/lynx/domain/model/EventSource.class
 com/nominal/lynx/domain/model/BatchRecord$1.class
 com/nominal/lynx/domain/port/in/CreateBatchUseCase.class
-com/nominal/lynx/domain/port/out/BatchRepository.class
+com/nominal/lynx/domain/model/LedgerAction.class
 com/nominal/lynx/domain/model/BatchRecord$BatchStatus.class
-com/nominal/lynx/domain/model/BatchRecord.class

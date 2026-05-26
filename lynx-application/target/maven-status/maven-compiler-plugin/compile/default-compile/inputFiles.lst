@@ -1,2 +1,9 @@
+/home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/dto/BatchResponse.java
+/home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/dto/ChangeStatusRequest.java
 /home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/dto/CreateBatchCommand.java
+/home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/dto/CreateBatchRequest.java
+/home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/port/in/CreateBatchUseCase.java
+/home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/port/in/CreateBatchUseCaseImpl.java
+/home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/port/in/GetBatchUseCase.java
+/home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/port/in/GetBatchUseCaseImpl.java
 /home/javier/Documents/local-projects/lynx-core/lynx-application/src/main/java/com/nominal/lynx/application/usecase/CreateBatchService.java

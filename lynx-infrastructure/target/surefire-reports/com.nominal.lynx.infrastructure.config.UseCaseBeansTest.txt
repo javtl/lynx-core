@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.nominal.lynx.infrastructure.config.UseCaseBeansTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.224 s -- in com.nominal.lynx.infrastructure.config.UseCaseBeansTest
