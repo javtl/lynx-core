@@ -3,7 +3,7 @@ package com.nominal.lynx.infrastructure.config;
 import com.nominal.lynx.application.port.in.CreateBatchUseCase;
 import com.nominal.lynx.application.port.in.GetBatchUseCase;
 import com.nominal.lynx.application.port.in.CreateBatchUseCaseImpl;
-import com.nominal.lynx.application.port.in.GetBatchUseCaseImpl; // ◄ CORREGIDO: Empaquetado consistente
+import com.nominal.lynx.application.port.in.GetBatchUseCaseImpl;
 import com.nominal.lynx.domain.port.out.BatchRepositoryPort;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
