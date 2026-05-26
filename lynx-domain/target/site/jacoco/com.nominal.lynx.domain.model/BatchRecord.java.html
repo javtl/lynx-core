@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BatchRecord.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LYNX Domain — Pure Business Core</a> &gt; <a href="index.source.html" class="el_package">com.nominal.lynx.domain.model</a> &gt; <span class="el_source">BatchRecord.java</span></div><h1>BatchRecord.java</h1><pre class="source lang-java linenums">package com.nominal.lynx.domain.model;
+
+import com.nominal.lynx.domain.exception.InconsistentStateTransitionException;
+
+import java.time.Instant;
+import java.util.Map;
+import java.util.UUID;
+
+/**
+ * Immutable aggregate root for a production batch.
+ * &lt;p&gt;
+ * This type lives in the domain layer and contains only business rules:
+ * invariants at creation time and valid status transitions.
+ */
+public record BatchRecord(
+        UUID id,
+        String sku,
+        double quantity,
+        String unit,
+        Map&lt;String, Object&gt; metadata,
+        BatchStatus currentStatus,
+        UUID createdBy,
+        Instant createdAt
+) {
+    /**
+     * Canonical constructor enforcing domain invariants.
+     */
+<span class="fc" id="L28">    public BatchRecord {</span>
+<span class="pc bpc" id="L29" title="1 of 4 branches missed.">        if (sku == null || sku.isBlank()) {</span>
+<span class="fc" id="L30">            throw new IllegalArgumentException(&quot;sku must not be blank&quot;);</span>
+        }
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (quantity &lt;= 0) {</span>
+<span class="nc" id="L33">            throw new IllegalArgumentException(&quot;quantity must be greater than zero&quot;);</span>
+        }
+<span class="pc bpc" id="L35" title="2 of 4 branches missed.">        if (unit == null || unit.isBlank()) {</span>
+<span class="nc" id="L36">            throw new IllegalArgumentException(&quot;unit must not be blank&quot;);</span>
+        }
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        metadata = metadata == null ? Map.of() : Map.copyOf(metadata);</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        currentStatus = currentStatus == null ? BatchStatus.DRAFT : currentStatus;</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        createdAt = createdAt == null ? Instant.now() : createdAt;</span>
+<span class="fc" id="L41">    }</span>
+
+    /**
+     * Factory method for creating a new draft batch with generated identifier and timestamp.
+     */
+    public static BatchRecord create(
+            String sku,
+            double quantity,
+            String unit,
+            Map&lt;String, Object&gt; metadata,
+            UUID createdBy
+    ) {
+<span class="fc" id="L53">        return new BatchRecord(</span>
+<span class="fc" id="L54">                UUID.randomUUID(),</span>
+                sku,
+                quantity,
+                unit,
+                metadata,
+                BatchStatus.DRAFT,
+                createdBy,
+<span class="fc" id="L61">                Instant.now()</span>
+        );
+    }
+
+    /**
+     * Returns a new immutable instance with the next status if transition is allowed.
+     *
+     * @throws InconsistentStateTransitionException when transition is invalid
+     */
+    public BatchRecord transitionTo(BatchStatus nextStatus) {
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (!currentStatus.canTransitionTo(nextStatus)) {</span>
+<span class="fc" id="L72">            throw new InconsistentStateTransitionException(currentStatus, nextStatus);</span>
+        }
+<span class="fc" id="L74">        return new BatchRecord(id, sku, quantity, unit, metadata, nextStatus, createdBy, createdAt);</span>
+    }
+
+    /**
+     * Domain lifecycle for a batch.
+     */
+<span class="fc" id="L80">    public enum BatchStatus {</span>
+<span class="fc" id="L81">        DRAFT,</span>
+<span class="fc" id="L82">        ACTIVE,</span>
+<span class="fc" id="L83">        COMPLETED,</span>
+<span class="fc" id="L84">        DISPATCHED,</span>
+<span class="fc" id="L85">        DISCARDED;</span>
+
+        /**
+         * Validates if transition to the given status is allowed by domain rules.
+         */
+        public boolean canTransitionTo(BatchStatus next) {
+<span class="fc bfc" id="L91" title="All 4 branches covered.">            return switch (this) {</span>
+<span class="pc bpc" id="L92" title="3 of 4 branches missed.">                case DRAFT -&gt; next == ACTIVE || next == DISCARDED;</span>
+<span class="pc bpc" id="L93" title="3 of 4 branches missed.">                case ACTIVE -&gt; next == COMPLETED || next == DISCARDED;</span>
+<span class="pc bpc" id="L94" title="3 of 4 branches missed.">                case COMPLETED -&gt; next == DISPATCHED || next == DISCARDED;</span>
+<span class="fc" id="L95">                case DISPATCHED, DISCARDED -&gt; false;</span>
+            };
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

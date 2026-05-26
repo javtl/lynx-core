@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+LYNX Domain — Pure Business Core,com.nominal.lynx.domain.model,BatchRecord,14,104,6,12,2,15,6,6,0,3
+LYNX Domain — Pure Business Core,com.nominal.lynx.domain.model,BatchRecord.BatchStatus,15,55,9,7,0,11,6,5,0,2
+LYNX Domain — Pure Business Core,com.nominal.lynx.domain.exception,InconsistentStateTransitionException,0,6,0,0,0,2,0,1,0,1
