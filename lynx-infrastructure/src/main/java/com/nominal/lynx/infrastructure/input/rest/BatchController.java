@@ -2,8 +2,10 @@ package com.nominal.lynx.infrastructure.input.rest;
 
 import com.nominal.lynx.application.dto.CreateBatchRequest;
 import com.nominal.lynx.application.dto.BatchResponse;
+import com.nominal.lynx.application.dto.ChangeStatusRequest; // ◄ NUEVO IMPORT LYNX-06
 import com.nominal.lynx.application.port.in.CreateBatchUseCase;
 import com.nominal.lynx.application.port.in.GetBatchUseCase;
+import com.nominal.lynx.application.port.in.ChangeStatusUseCase; // ◄ NUEVO IMPORT LYNX-06
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -29,10 +31,15 @@ public class BatchController {
 
     private final CreateBatchUseCase createBatchUseCase;
     private final GetBatchUseCase getBatchUseCase;
+    private final ChangeStatusUseCase changeStatusUseCase; // ◄ AGREGADO PARA LYNX-06
 
-    public BatchController(CreateBatchUseCase createBatchUseCase, GetBatchUseCase getBatchUseCase) {
+    // Constructor modificado para inyectar el nuevo caso de uso que configuramos en UseCaseBeans
+    public BatchController(CreateBatchUseCase createBatchUseCase,
+                           GetBatchUseCase getBatchUseCase,
+                           ChangeStatusUseCase changeStatusUseCase) { // ◄ AGREGADO PARA LYNX-06
         this.createBatchUseCase = createBatchUseCase;
         this.getBatchUseCase = getBatchUseCase;
+        this.changeStatusUseCase = changeStatusUseCase; // ◄ AGREGADO PARA LYNX-06
     }
 
     @PostMapping
@@ -47,5 +54,21 @@ public class BatchController {
     public ResponseEntity<BatchResponse> getBatch(@PathVariable UUID id) {
         BatchResponse response = getBatchUseCase.execute(id);
         return ResponseEntity.ok(response);
+    }
+
+    // 🔧 NUEVO ENDPOINT AGREGADO PARA LYNX-06: Modificación de estado con respuesta semántica 204
+    @PatchMapping("/{id}/status")
+    @Operation(summary = "Cambiar estado de un lote", description = "Transiciona el estado con validación")
+    public ResponseEntity<Void> changeStatus(
+            @PathVariable UUID id,
+            @Valid @RequestBody ChangeStatusRequest request) {
+
+        // El ID de usuario se genera de forma temporal; se conectará al JWT en el Sprint 3
+        UUID temporaryUserId = UUID.randomUUID();
+
+        // Invocación exacta según la firma real void execute(UUID, String, UUID, String)
+        changeStatusUseCase.execute(id, request.newStatus(), temporaryUserId, request.reason());
+
+        return ResponseEntity.noContent().build(); // Devuelve HTTP 204 No Content
     }
 }
